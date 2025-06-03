@@ -1,39 +1,221 @@
-<body>
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skill & Kontak - [Bo]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --light-bg: linear-gradient(to bottom, #f0f4ff, #fdfdfd);
+      --dark-bg: #1e1e1e;
+      --text-dark: #f0f0f0;
+      --text-light: #333;
+      --primary: #007bff;
+      --accent: #28a745;
+    }* { box-sizing: border-box; }
 
-  <header>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--light-bg);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1s ease;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: var(--dark-bg);
+  color: var(--text-dark);
+}
+
+header {
+  background: linear-gradient(to right, var(--primary), #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+body.dark header {
+  background: #333;
+}
+
+nav {
+  background-color: #fff;
+  text-align: center;
+  padding: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+body.dark nav {
+  background-color: #2b2b2b;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+body.dark nav a {
+  color: #ccc;
+}
+
+nav a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skill {
+  margin-bottom: 25px;
+}
+
+.skill-name {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.progress {
+  background-color: #e0e0e0;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 22px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, var(--accent), #65d269);
+  color: white;
+  text-align: right;
+  padding-right: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: width 2s ease;
+}
+
+footer {
+  background-color: #2c3e50;
+  color: orange;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  margin-top: 40px;
+}
+
+.toggle-btn {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toggle-btn button {
+  background-color: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.toggle-btn button:hover {
+  background-color: #0056b3;
+}
+
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+body.dark form {
+  background-color: #333;
+  color: white;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+form button {
+  background-color: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+  </style>
+</head>
+<body>  <header>
     <h1>👨‍💻 [Bo]</h1>
-    <p><strong>⚙️ Skill & Kemampuan Saya</strong> — Versi Terbaik dari Saya ✨</p>
-  </header>
-
-  <nav>
+    <p>💼 Skill & Kemampuan Saya — Versi Terbaik ✨</p>
+  </header>  <nav>
     <a href="index.html">🏠 Beranda</a>
-    <a href="portofolio.html">💼 MyPort</a>
+    <a href="portofolio.html">📁 MyPort</a>
     <a href="skill.html">🛠️ MySkill</a>
     <a href="kontak.html">📬 Kontak</a>
-  </nav>
-
-  <div class="toggle-btn">
+  </nav>  <div class="toggle-btn">
     <button onclick="toggleDarkMode()" id="darkModeBtn">🌙 Dark Mode</button>
-  </div>
-
-  <div class="container">
-    <h2>🧰 Keahlian Utama Saya</h2>
-
-    <div class="skill"><div class="skill-name">💻 HTML</div><div class="progress"><div class="progress-bar" data-width="85%">0%</div></div></div>
+  </div>  <div class="container">
+    <h2>🔧 Keahlian Utama Saya</h2>
+    <div class="skill"><div class="skill-name">🔧 HTML</div><div class="progress"><div class="progress-bar" data-width="85%">0%</div></div></div>
     <div class="skill"><div class="skill-name">🎨 CSS</div><div class="progress"><div class="progress-bar" data-width="75%">0%</div></div></div>
     <div class="skill"><div class="skill-name">🖌️ Canva / Pixellab</div><div class="progress"><div class="progress-bar" data-width="90%">0%</div></div></div>
     <div class="skill"><div class="skill-name">🤖 ChatGPT & AI Tools</div><div class="progress"><div class="progress-bar" data-width="75%">0%</div></div></div>
-    <div class="skill"><div class="skill-name">🖼️ Desain Grafis</div><div class="progress"><div class="progress-bar" data-width="80%">0%</div></div></div>
+    <div class="skill"><div class="skill-name">🖼️ Desain Grafis</div><div class="progress"><div class="progress-bar" data-width="80%">0%</div></div></div><h2>📨 Form Kontak Saya</h2>
+<form action="https://formsubmit.co/your@email.com" method="POST">
+  <input type="text" name="name" placeholder="🧑 Nama Anda" required>
+  <input type="email" name="email" placeholder="📧 Email Anda" required>
+  <textarea name="message" rows="5" placeholder="📝 Pesan..." required></textarea>
+  <button type="submit">📤 Kirim Pesan</button>
+</form>
 
-    <h2>📬 Form Kontak Saya</h2>
-    <form action="https://formsubmit.co/your@email.com" method="POST">
-      <input type="text" name="name" placeholder="🧑 Nama Anda" required>
-      <input type="email" name="email" placeholder="📧 Email Anda" required>
-      <textarea name="message" rows="5" placeholder="💬 Pesan..." required></textarea>
-      <button type="submit">📨 Kirim Pesan</button>
-    </form>
-  </div>
+  </div>  <footer>
+    &copy; 2025 [Bo] PPST | Dibuat dengan niat, ngopi ☕, dan semangat 🌱
+  </footer>  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      const btn = document.getElementById("darkModeBtn");
+      btn.textContent = document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    }
 
-  <footer>
-    &copy; 2025 [Bo] PPST | Dibuat dengan niat, ngopi, dan semangat 🌿☕
-  </footer>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".progress-bar").forEach(bar => {
+        const target = bar.getAttribute("data-width");
+        setTimeout(() => {
+          bar.style.width = target;
+          bar.textContent = target;
+        }, 300);
+      });
+    });
+  </script></body>
+</html>
