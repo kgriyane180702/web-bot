@@ -7,36 +7,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f5f7fa;
       color: #333;
       line-height: 1.6;
       margin: 0;
+      animation: fadeIn 1s ease;
     }
 
     header {
-      background-color: #007bff;
+      background: linear-gradient(to right, #007bff, #0056b3);
       color: white;
-      font-style: bold;
-      padding: 10px;
+      padding: 20px 10px;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     nav {
-      background-color: #ddd;
-      padding: 10px;
+      background-color: #eaeaea;
+      padding: 12px;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     nav a {
-      color: #333;
+      color: #007bff;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
-      padding: 5px 10px;
+      padding: 6px 12px;
       border-radius: 5px;
-      transition: background-color 0.3s;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -46,14 +52,16 @@
 
     .container {
       padding: 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     section {
       background-color: white;
       padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       transition: transform 0.2s;
     }
 
@@ -63,11 +71,12 @@
 
     .btn {
       background-color: #28a745;
-      color: black;
-      padding: 5px 10px;
+      color: white;
+      padding: 10px 16px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       transition: 0.3s;
+      font-weight: bold;
       display: inline-block;
       margin-top: 10px;
     }
@@ -77,26 +86,38 @@
     }
 
     img.profil {
-      width: 310px;
+      width: 250px;
       border-radius: 15%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin-bottom: 15px;
     }
 
     footer {
-      font-family: 'Dancing Script' sans-serif;
-      font-size: 8px;
+      font-family: 'Dancing Script', sans-serif;
+      font-size: 10px;
       font-style: italic;
       background-color: #2c3e50;
       color: orange;
-      padding: 10px;
+      padding: 15px;
       text-align: center;
-      border-top: 2px solid #007bff;
+      border-top: 3px solid #007bff;
+      margin-top: 40px;
     }
 
     @media (max-width: 600px) {
-      header, nav, section, footer {
-        text-align: center;
+      nav a {
+        display: block;
+        margin: 8px 0;
       }
+
+      img.profil {
+        width: 80%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -111,48 +132,39 @@
   <nav>
     <a href="index.html">Beranda</a>
     <a href="tentang.html">Tentang</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="portofolio.html">Myport</a>
+    <a href="portofolio.html">MyPort</a>
     <a href="skill.html">MySkill</a>
+    <a href="kontak.html">Kontak</a>
   </nav>
 
   <div class="container">
 
     <section id="tentang">
       <h3>Tentang Saya</h3>
-      <p>Halo! Saya [Bo], Sant3 SYAFA'ATUT THULAB sedang belajar HTML dan CSS dari nol. __BISMILLAH__ Saya semangat belajar untuk menjadi web developer freelance profesional.</p>
+      <p>Halo! Saya [Bo], Santri Syafa'atut Thulab yang sedang belajar HTML dan CSS dari nol. <strong>Bismillah</strong>, saya semangat belajar untuk menjadi web developer freelance profesional.</p>
     </section>
 
     <section id="hobi">
       <h3>Hobi & Keahlian</h3>
       <ul>
-        <li>Menulis</li>
-        <li>Ngoding</li>
-        <li>Desain grafis</li>
+        <li>✍️ Menulis</li>
+        <li>💻 Ngoding</li>
+        <li>🎨 Desain Grafis</li>
       </ul>
     </section>
 
     <section id="projek">
       <h3>Proyek atau Pengalaman</h3>
-      <p>Saya adalah Santr3 Syafa'atut Thulab yang sedang membangun portofolio website menggunakan HTML & CSS.</p>
+      <p>Saya sedang membangun portofolio website menggunakan HTML & CSS sebagai bagian dari perjalanan saya menjadi web developer yang bermanfaat.</p>
     </section>
-  
+
     <section id="kontak">
-      <h2>Kontak saya ;)</h2>
-      <p>Jangan ragu Jangan bimbang, berteman itu membuat kita semakin berkembang. Monggo ngopi bareng ☕</p>
+      <h3>Kontak Saya ;)</h3>
+      <p>Jangan ragu, jangan bimbang — berteman itu bikin kita berkembang. Monggo ngopi bareng ☕</p>
       <p><i class="fas fa-envelope"></i> Email: kgriyane180702@email.com</p>
-      <p><i class="fab fa-instagram"></i>Instagram: @ryn_efndy</p> 
+      <p><i class="fab fa-instagram"></i> Instagram: @ryn_efndy</p> 
     </section>
-    <div style="margin-top: 13px;">
-  <a href="portofolio.html" class="btn">Portofolio Saya</a>
-  <a href="kontak.html" class="btn">Hubungi Saya</a>
-</div>
 
-  </div>
-
-  <footer>
-    &copy; 2025 [Bo] | PPST | •Dibuat setulus ❤️ menggunakan HTML+CSS + ☕
-  </footer>
-
-</body>
-</html>
+    <div style="margin-top: 15px; text-align: center;">
+      <a href="portofolio.html" class="btn">📁 Lihat Portofolio</a>
+      <a href="kontak.html" class="btn">📨 Hubungi Saya</
