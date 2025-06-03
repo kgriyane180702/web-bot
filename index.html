@@ -4,29 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Wellcome - [Bo]</title>
-  body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
-  color: #2c3e50;
-}
-
-footer {
-  background-color: #2c3e50;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  border-top: 4px solid #007bff;
-}
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
       margin: 0;
-      background-color: #f4f4f4;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
     }
 
     header {
@@ -38,61 +26,63 @@ footer {
 
     nav {
       background-color: #ddd;
-      color: white;
       padding: 10px;
       text-align: center;
     }
 
     nav a {
-      margin: 0 15px;
-      text-decoration: none;
       color: #333;
+      text-decoration: none;
+      margin: 0 15px;
       font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #007bff;
+      color: white;
     }
 
     .container {
       padding: 20px;
     }
-    section {
-  background-color: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-section:hover {
-  transform: scale(1.02);
-}
 
     section {
       background-color: white;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
-    .btn {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.3s;
-  display: inline-block;
-  margin-top: 10px;
-}
 
-.btn:hover {
-  background-color: #218838;
-}
+    section:hover {
+      transform: scale(1.02);
+    }
+
+    .btn {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
 
     footer {
-      background-color: #333;
+      background-color: #2c3e50;
       color: white;
-      text-align: center;
       padding: 15px;
+      text-align: center;
+      border-top: 4px solid #007bff;
     }
 
     img.profil {
@@ -111,31 +101,16 @@ section:hover {
 <body>
 
   <header>
-    <img src="20250531_221910.jpg" alt="Foto Profil" class="profil">
+    <img src="profil.jpg" alt="Foto Profil" class="profil">
     <h1>[Bo]</h1>
     <p>Calon Web Developer ✨</p>
   </header>
-  nav a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
 
-nav a:hover {
-  background-color: #007bff;
-  color: white;
-}
- <nav>
-  <a href="index.html">Beranda</a>
-  <a href="tentang.html">Tentang</a>
-  <a href="kontak.html">Kontak</a>
- </nav>
   <nav>
-    <a href="#tentang">Tentang</a>
+    <a href="index.html">Beranda</a>
+    <a href="tentang.html">Tentang</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="#tentang">Tentang (di halaman)</a>
     <a href="#hobi">Hobi</a>
     <a href="#projek">Proyek</a>
     <a href="#kontak">Kontak</a>
@@ -161,9 +136,11 @@ nav a:hover {
       <h2>Proyek atau Pengalaman</h2>
       <p>Saya sedang membangun portofolio website menggunakan HTML & CSS.</p>
     </section>
-   <a href="kontak.html" class="btn">Hubungi Saya</a>
+
+    <a href="kontak.html" class="btn">Hubungi Saya</a>
+
     <section id="kontak">
-      <h2>Kontak saya ;):</h2>
+      <h2>Kontak saya ;)</h2>
       <p>Email: none@email.com</p>
       <p>Instagram: @none</p>
     </section>
