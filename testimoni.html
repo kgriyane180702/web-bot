@@ -6,35 +6,56 @@
   <title>Testimoni - [Bo]</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #007bff;
+      --accent: #28a745;
+      --dark-bg: #1e1e1e;
+      --light-text: #f0f0f0;
+      --dark-text: #333;
+    }
     * { box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f7fa;
-      color: #333;
-      animation: fadeIn 1s ease;
+      background: #f5f7fa;
+      color: var(--dark-text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: var(--dark-bg);
+      color: var(--light-text);
     }
 
     header {
-      background-color: #007bff;
+      background: linear-gradient(to right, var(--primary), #00c6ff);
       color: white;
-      padding: 40px 20px;
       text-align: center;
+      padding: 40px 20px;
     }
 
     nav {
-      background-color: #eee;
+      background-color: #fff;
       padding: 12px;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    body.dark nav {
+      background-color: #2b2b2b;
     }
 
     nav a {
       margin: 0 10px;
       text-decoration: none;
-      color: #007bff;
       font-weight: bold;
+      color: var(--primary);
+    }
+
+    body.dark nav a {
+      color: #ccc;
     }
 
     nav a:hover {
@@ -49,59 +70,51 @@
 
     h2 {
       text-align: center;
-      color: #007bff;
-      margin-bottom: 30px;
+      color: var(--primary);
     }
 
     .testimoni {
       background-color: white;
-      border-left: 5px solid #007bff;
+      border-left: 5px solid var(--primary);
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
+      animation: fadeIn 0.8s ease;
     }
 
-    .avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .isi {
-      flex: 1;
+    body.dark .testimoni {
+      background-color: #333;
     }
 
     .testimoni p {
       font-size: 15px;
       line-height: 1.6;
-      margin: 0 0 10px 0;
     }
 
-    .nama {
+    .testimoni .nama {
       font-weight: bold;
+      margin-top: 10px;
       font-size: 14px;
       color: #555;
     }
 
-    .rating {
+    .stars {
       color: gold;
-      font-size: 16px;
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
     form {
       background-color: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      margin-top: 50px;
+      margin-top: 40px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    }
+
+    body.dark form {
+      background-color: #333;
+      color: white;
     }
 
     form input, form textarea {
@@ -114,9 +127,24 @@
     }
 
     form button {
-      background-color: #28a745;
+      background-color: var(--accent);
       color: white;
-      padding: 10px 20px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .toggle-btn {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .toggle-btn button {
+      background-color: var(--primary);
+      color: white;
+      padding: 8px 16px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
@@ -124,12 +152,12 @@
     }
 
     footer {
-      text-align: center;
-      padding: 15px;
       background-color: #2c3e50;
       color: orange;
+      text-align: center;
+      padding: 15px;
       font-size: 13px;
-      margin-top: 50px;
+      margin-top: 40px;
     }
 
     @keyframes fadeIn {
@@ -138,13 +166,8 @@
     }
 
     @media (max-width: 600px) {
-      .testimoni {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .isi {
-        text-align: center;
+      .testimoni p {
+        font-size: 14px;
       }
     }
   </style>
@@ -160,52 +183,55 @@
     <a href="index.html">🏠 Beranda</a>
     <a href="portofolio.html">📁 MyPort</a>
     <a href="skill.html">🛠️ MySkill</a>
-    <a href="testimoni.html">🗨️ Testimoni</a>
+    <a href="testimoni.html">🗣️ Testimoni</a>
     <a href="kontak.html">📬 Kontak</a>
   </nav>
+
+  <div class="toggle-btn">
+    <button onclick="toggleDarkMode()" id="darkModeBtn">🌙 Dark Mode</button>
+  </div>
 
   <div class="container">
     <h2>💬 Pendapat Mereka</h2>
 
     <div class="testimoni">
-      <img src="aulia.jpg" alt="Aulia" class="avatar">
-      <div class="isi">
-        <p>"Bo sangat sabar dan profesional. Hasil websitenya memuaskan dan selesai tepat waktu. Terima kasih!"</p>
-        <div class="nama">– Aulia, Klien Desain Portofolio</div>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-      </div>
+      <p>"Bo sangat sabar dan profesional. Hasil websitenya memuaskan dan selesai tepat waktu. Terima kasih!"</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="nama">– Aulia, Klien Desain Portofolio</div>
     </div>
 
     <div class="testimoni">
-      <img src="reza.jpg" alt="Reza" class="avatar">
-      <div class="isi">
-        <p>"Desain yang simple tapi elegan. Bo bisa menerjemahkan ide saya menjadi tampilan web yang hidup."</p>
-        <div class="nama">– Reza, UMKM Owner</div>
-        <div class="rating">⭐⭐⭐⭐</div>
-      </div>
+      <p>"Desain yang simple tapi elegan. Bo bisa menerjemahkan ide saya menjadi tampilan web yang hidup."</p>
+      <div class="stars">⭐⭐⭐⭐</div>
+      <div class="nama">– Reza, UMKM Owner</div>
     </div>
 
     <div class="testimoni">
-      <img src="tania.jpg" alt="Tania" class="avatar">
-      <div class="isi">
-        <p>"Fast respon, skill oke, dan sangat komunikatif! Web saya langsung naik kelas setelah dibantu Bo."</p>
-        <div class="nama">– Tania, Freelancer</div>
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-      </div>
+      <p>"Fast respon, skill oke, dan sangat komunikatif! Web saya langsung naik kelas setelah dibantu Bo."</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <div class="nama">– Tania, Freelancer</div>
     </div>
 
-    <h2>📝 Kirim Testimoni Anda</h2>
-    <form action="https://formsubmit.co/kgriyane180702@gmail.com" method="POST">
-      <input type="text" name="nama" placeholder="Nama Anda" required>
+    <h2>📝 Kirim Testimoni</h2>
+    <form action="https://formsubmit.co/kgriyane180702@email.com" method="POST">
+      <input type="text" name="name" placeholder="Nama Anda" required>
       <input type="email" name="email" placeholder="Email Anda" required>
-      <textarea name="pesan" rows="4" placeholder="Tulis testimoni Anda di sini..." required></textarea>
-      <button type="submit">📤 Kirim Testimoni</button>
+      <textarea name="message" rows="5" placeholder="Testimoni Anda..." required></textarea>
+      <button type="submit">Kirim Testimoni</button>
     </form>
   </div>
 
   <footer>
-    &copy; 2025 [Bo] PPST | Testimoni Kepuasan Klien 💯
+    &copy; 2025 [Bo] PPST | Testimoni Klien 💯
   </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      const btn = document.getElementById("darkModeBtn");
+      btn.textContent = document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+    }
+  </script>
 
 </body>
 </html>
